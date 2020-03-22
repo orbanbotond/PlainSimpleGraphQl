@@ -50,3 +50,70 @@ mutation {
 }
 ```
 
+```
+mutation {
+  createUser(
+    name: "Orban Csenge",
+    authProvider: {
+      credentials: {
+        email: "orbancsengekicckacc@gmail.com",
+        password: "orbancsenge"
+      }
+    }
+  ) {
+    id,
+    name,
+    email
+  }
+}
+```
+
+```
+mutation {
+  signinUser(
+    credentials: {
+      email: "orbancsengekicckacc@gmail.com",
+      password: "orbancsenge"
+    }
+  ) {
+    token,
+    user {
+      id,
+      email,
+      name
+    }
+  }
+}
+```
+
+```
+mutation {
+  createLink(
+    url: "http://npmjs.com/package/graphql-tools",
+    description: "Best tools!"
+  ) {
+    description,
+    url,
+    id,
+    postedBy{
+      id,
+      name,
+      email
+    }
+  }
+}
+```
+
+```
+{
+  allLinks {
+    description,
+    url,
+    postedBy{
+      id,
+      name
+    }
+  }
+}
+```
+
