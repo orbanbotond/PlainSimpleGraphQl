@@ -22,3 +22,31 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+A few example queries:
+
+```
+{
+  allLinks {
+    description,
+    url,
+    id
+  }
+}
+```
+
+A few example mutations:
+
+```
+mutation {
+  createLink(
+    url: "http://npmjs.com/package/graphql-tools",
+    description: "Best tools!"
+  ) {
+    description,
+    url,
+    id
+  }
+}
+```
+
