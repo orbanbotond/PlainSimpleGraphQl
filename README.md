@@ -117,3 +117,24 @@ mutation {
 }
 ```
 
+```
+{
+  allLinks(filter:{
+      descriptionContains: "awe"
+      OR: {descriptionContains: "rub"}
+    }
+  ){
+    url,
+    description,
+    postedBy{
+      id,
+      name
+    },
+    votes {
+      user {
+        name
+      }
+    }
+  }
+}
+```
